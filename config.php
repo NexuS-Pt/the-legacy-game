@@ -10,7 +10,7 @@
 	$config["utilizador"]			= "user";
 	$config["palavrapasse"]			= "password";
 	$config["basededados"]			= "database";
-	$config["systemmail"]			= "geral@nexus-pt.org";
+	$config["systemmail"]			= "geral@nexus-pt.eu";
   	$cookie		               		= "nxs2011";
 	$prefix					= "nxs_";
 	$config["coinsExtraBuy"]		= 0;
