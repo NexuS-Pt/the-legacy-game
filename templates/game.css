@@ -1,0 +1,404 @@
+@charset "utf-8";
+/* CSS Document */
+
+button.lvlup {
+	background: #FFCC00;
+	border: 1px solid #FF9900;
+	border-radius: 4px;
+	color: #000000;
+	font-size: 11pt;
+	width: 125px;
+}
+
+button.vec {
+	background: #FF3300;
+	border: 1px solid #FF0000;
+	border-radius: 4px;
+	color: #FFFFFF;
+	font-size: 11pt;
+	width: 150px;
+}
+
+button.lvl {
+	background: #00CC00;
+	border: 1px solid #009900;
+	border-radius: 4px;
+	color: #FFFFFF;
+	font-size: 11pt;
+	width: 125px;
+}
+
+div#forest {
+	width: 128px;
+	height: 128px; 
+	border-radius: 5px; 
+	margin-left: auto; 
+	line-height: 128px;
+	text-align: center;
+	color: #FFF; 
+	font-size: 22px; 
+	margin-right: auto; 
+	cursor: pointer; 
+	background: url(./../images/game/battle/forest.gif); 
+	background-size: 128px;
+	float: left;
+	margin: 2px;
+}
+
+div#forest:hover {
+	border: 1px solid #FFCC00;	
+	color: #FFCC00;	
+}
+
+div#desert {
+	width: 128px;
+	height: 128px; 
+	border-radius: 5px; 
+	margin-left: auto; 
+	line-height: 128px;
+	text-align: center;
+	color: #FFF; 
+	font-size: 22px; 
+	margin-right: auto; 
+	cursor: pointer; 
+	background: url(./../images/game/battle/desert.gif);
+	background-size: 128px;
+	float: left;
+	margin: 2px;
+}
+
+div#desert:hover {
+	border: 1px solid #FFCC00;
+	color: #FFCC00;	
+}
+
+div#ocean {
+	width: 128px;
+	height: 128px; 
+	border-radius: 5px; 
+	margin-left: auto; 
+	line-height: 128px;
+	text-align: center;
+	color: #FFF; 
+	font-size: 22px; 
+	margin-right: auto; 
+	cursor: pointer; 
+	background: url(./../images/game/battle/ocean.gif);
+	background-size: 128px;
+	float: left;
+	margin: 2px;
+}
+
+div#ocean:hover {
+	border: 1px solid #FFCC00;	
+	color: #FFCC00;	
+}
+
+div#battle-history-top {
+	height: 20px;
+	line-height: 20px; 
+	border: 1px solid #FF9900;
+	border-radius: 5px 5px 0 0; 
+	background: url(topbanner.jpg) #FF6600; 
+	text-align: center; 
+	font-weight: bold; color: #FFF;
+}
+
+div#battle-history-content {
+	border-left: 1px solid #CCC; 
+	border-right: 1px solid #CCC; 
+	padding: 10px;
+}
+
+div#battle-history-footer {
+	height: 10px; 
+	line-height: 10px; 
+	border: 1px solid #FF9900; 
+	border-radius: 0 0 5px 5px; 
+	background: url(topbanner.jpg) #FF6600;
+	margin-bottom: 20px;
+}
+
+div#battle-result {
+	 height: 50px; 
+	 border: 1px solid #FF9900; 
+	 border-radius: 0 0 4px 4px; 
+	 background: url(topbanner.jpg) #FF6600;
+}
+
+div#battle-result-value {
+	 width: 50%; 
+	 float: left; 
+	 color: #FFF; 
+	 font-size: 30pt; 
+	 text-align: center;
+}
+
+div#battle-history-me {
+	cursor: pointer;
+	padding: 3px;
+	border: 1px solid #333333;
+	border-radius: 4px;
+	background: #666666;
+	color: #FFF;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+div#battle-history-me:hover {
+	border: 1px solid #666666;
+	background: #999999;
+	padding-left: 10px;
+}
+
+div#battle-history-nome {
+	cursor: pointer;
+	padding: 3px;
+	border: 1px solid #666666;
+	border-radius: 4px;
+	background: #999999;
+	color: #000;
+	text-align: right;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+div#battle-history-nome:hover {
+	border: 1px solid #999999;
+	background: #CCCCCC;
+	padding-right: 10px;
+}
+
+/* :::::::: LISTA DE MONSTROS ::::::::*/
+div#lm-header {
+	background: url(topbanner.jpg) #F90; 
+	border: 1px solid #F60; 
+	border-bottom: none;  
+	padding: 10px; 
+	font-weight: bold; 
+	font-size: 22pt; 
+	color: #FFF; 
+	border-radius: 4px 4px 0 0;
+}
+
+div#lm-header-2 {
+	font-size: 11pt;
+}
+
+div#lm-titles {
+	width: 858px; 
+	background: url(topbanner.jpg) #F90; 
+	border: 1px solid #F60; 
+	border-top: 1px solid #F90; 
+	display: inline-block; 
+	color: #FFF; 
+	height: 22px; 
+	line-height: 22px;
+}
+
+div#lm-data {
+	cursor: default;
+	display: inline-block; 
+	width: 858px; 
+	border-left: 1px solid #CCC; 
+	border-right: 1px solid #CCC;
+}
+
+div#lm-data:hover {
+	background: #CCC;
+}
+
+div#lm-footer {
+	background: url(topbanner.jpg); 
+	border-radius: 0 0 4px 4px; 
+	border: 1px solid #F90; 
+	height: 22px;
+}
+
+/* :::::::: HISTORICO ::::::::*/
+div.hs-id {
+	width: 100px;
+	border-radius: 4px 0 0 4px;
+	float: left;
+	text-align: center;
+	color: #FFF;
+}
+
+div#hs-win {
+	background: url(hs-img.png) #090;
+}
+
+div#hs-lose {
+	background: url(hs-img.png) #F00;
+}
+
+div#hs-duo {
+	background: url(hs-img.png) #00F;
+}
+
+div#hs-market {
+	background: url(hs-img.png) #F90;
+}
+
+div#hs-skill {
+	background: url(hs-img.png) #609;
+}
+
+div#hs-converter {
+	background: url(hs-img.png) #0FF;
+}
+
+div#hs-unknown {
+	background: url(hs-img.png) #999;
+}
+
+div.registry {
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	cursor: default;
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 2px;
+	line-height: 20px;
+}
+
+div.registry:hover {
+	background: #000;
+	color: #FFF;
+}
+
+/* :::::::: MALA ::::::::*/
+div#bag-equiped {
+	background: url(hs-img.png) green;
+	color: white;
+	border-radius: 3px 0 0 3px;
+}
+
+/* :::::::: CHARACTER ::::::::*/
+.failure {
+	padding: 4px;
+	background: url(hs-img.png) repeat-x red;
+	border: 1px solid #730C0C;
+	color: #FFF;
+	font-size: 15pt;
+}
+
+.sucess{
+	padding: 4px;
+	background: url(hs-img.png) repeat-x #03A70B;
+	border: 1px solid #037B0A;
+	color: #FFF;
+	font-size: 15pt;
+}
+
+/* :::::::: RELOGIO ::::::::*/
+div#rlg-out {
+	border: 1px solid #F60;
+	border-radius: 5px; 
+	background: url(topbanner.jpg); 
+	margin: auto; 
+	width: 400px; 
+	padding: 10px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+div#rlg-time {
+	font-size: 12pt;
+	text-align: center; 
+	width: 400px; 
+	margin: auto;
+	padding-bottom: 5px;
+}
+
+div#rlg-time  span {
+	font-size: 30pt; 
+	color: #FFF;
+}
+
+div#rlg-warning {
+	text-align: center; 
+	border: 1px solid #F90; 
+	border-radius: 5px;
+}
+	
+/* :::::::: MALA ::::::::*/
+div#bag-equip-name {
+	border-radius: 5px 5px 0 0; 
+	background: url(jpeg.jpg); 
+	height: 45px;
+	line-height: 45px;
+	font-size: 25pt;
+	color: #FFF; 
+	padding-left: 5px; 
+	padding-right: 5px;
+}
+
+div#bag-equip-part {
+	float: right;
+	font-size: 12pt;
+	line-height: 22px;
+}
+
+div#bag-equip-img {
+	background: #333;
+	text-align: center;
+	padding: 10px;
+}
+
+div#bag-equip-titles {
+	text-align: center; 
+	background: url(topbanner.jpg); 
+	border-left: 1px solid #CCC; 
+	border-right: 1px solid #CCC; 
+	display: inline-block; 
+	width: 858px;
+}
+
+div#bag-equip-skills {
+	text-align: center; 
+	border-left: 1px solid #CCC; 
+	border-right: 1px solid #CCC; 
+	display: inline-block; 
+	width: 858px;
+}
+
+div#bag-equip-footer {
+	background: url(topbanner.jpg); 
+	border: 1px solid #F60; 
+	border-radius: 0 0 5px 5px; 
+	height: 25px;
+	margin-bottom: 25px;
+}
+
+div#bag-equip-footer div {
+	cursor: pointer;
+	text-align: center; 
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 200px; 
+	line-height: 25px; 
+	color: #FFF;
+}
+
+div#bag-equip-footer div:hover {
+	border: 1px solid #FFF;
+	border-radius: 4px;
+	height: 23px;
+}
+
+/* :::::::::: ABOUT :::::::: */
+div#about div {
+	padding: 5px;
+	border: 1px solid #E0E0E0;
+	background: url(about.png) no-repeat top right #F4F4F4;
+	margin-bottom: 3px;
+}
+
+div#about div.current_version {
+	border-radius: 5px 5px 0 0;
+	color: #333;
+	text-shadow: #000 0 -1px 3px;
+	border: 1px solid #C7C7C7;
+	background: url(about-now.png) no-repeat top right #DBDBDB;
+}

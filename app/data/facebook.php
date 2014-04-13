@@ -1,0 +1,1 @@
+<p align="center"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="http://www.facebook.com/pages/NexuS-O-Legado-CM/217527144959921" width="800" show_faces="true" border_color="orange" stream="true" header="false"></fb:like-box></p>
