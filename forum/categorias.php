@@ -52,7 +52,7 @@
         
 		if ($conta["previlegios"] == 1)
 		{
-			echo "<div style=\"padding: 5px; text-align: right;\"><form action=\"./page=forum-search\" method=\"post\">Pesquisar: <input type=\"text\" name=\"field_text\"><button type=\"submit\" name=\"search_submit\" class=\"site\">></button></button></form></div>";
+			echo "<div style=\"padding: 5px; text-align: right;\"><form action=\"./?page=forum-search\" method=\"post\">Pesquisar: <input type=\"text\" name=\"field_text\"><button type=\"submit\" name=\"search_submit\" class=\"site\">></button></button></form></div>";
 		}
 
 
