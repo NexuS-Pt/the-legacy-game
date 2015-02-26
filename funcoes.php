@@ -8,9 +8,9 @@ function login($email,$password,$time){
 	
 
 	$config["servidor"]			= "localhost";
-	$config["utilizador"]			= "serverne_wmaster";
-	$config["palavrapasse"]			= "kA?uj-P9";
-	$config["basededados"]			= "serverne_jogo";
+	$config["utilizador"]			= "user";
+	$config["palavrapasse"]			= "password";
+	$config["basededados"]			= "basededados";
   	$cookie		               		= "nxs2011";
 
 	//-----------------------------------------------------
