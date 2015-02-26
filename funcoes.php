@@ -5,13 +5,7 @@ function conta_data($info){
 }
 
 function login($email,$password,$time){
-	
-
-	$config["servidor"]			= "localhost";
-	$config["utilizador"]			= "user";
-	$config["palavrapasse"]			= "password";
-	$config["basededados"]			= "basededados";
-  	$cookie		               		= "nxs2011";
+	global $config;
 
 	//-----------------------------------------------------
 	$con = mysql_connect ($config["servidor"],$config["utilizador"],$config["palavrapasse"]);
@@ -27,8 +21,7 @@ function login($email,$password,$time){
 	$source = mysql_query($query);
 	$search_2 = mysql_fetch_array($source);
 	
-	if ($password == $search_2["password"])
-	{	
+	if ($password == $search_2["password"])	{	
             $cook_id = $search_2['id'].'.'.$search_2['password'];
             $expira = time() + $time;
             setcookie($cookie,$cook_id,$expira);
@@ -36,9 +29,7 @@ function login($email,$password,$time){
 			$p["real-user"] = true;
             $p["login"] = '<meta http-equiv="REFRESH" content="2;url=./">
 		<p align="center"><img src="./media/imagens/i_true.png" class="decorationone"><br>Login Efectuado com sucesso!</p>';
-	}
-	elseif ($password != $search_2['password'])
-	{
+	} elseif ($password != $search_2['password']) {
 			$p["real-user"] = false;
         	$p["login"] = '
 			<p align="center"><img src="./media/imagens/i_false.png" class="decorationone"><br>Erro, por favor verifique se os dados inseridos estão correctos, caso contrário, contacte a nossa administração!</p>';
@@ -47,7 +38,7 @@ function login($email,$password,$time){
 return $p;
 }
 
-function confirma_conta($data_cookie,$cookie){
+function confirma_conta($data_cookie,$cookie) {
     $conta = explode(".",$data_cookie);
 
     $query = "SELECT password FROM users WHERE id = '".$conta[0]."'";
@@ -62,19 +53,18 @@ function return_user_data() {
 	$conta = mysql_fetch_array(mysql_query($query));
 }
 
-function utilizadores_quantidade($valor){
+function utilizadores_quantidade($valor) {
     $count = 0;
     $query = "SELECT type FROM users WHERE type = '$valor' AND active ='1'";
     $data_source = mysql_query($query);
-    while($data = mysql_fetch_array($data_source))
-    {
+    while($data = mysql_fetch_array($data_source)) {
 	$count++;
     }
 	
     return $count;
 }
 
-function utilizadores_bloqueados(){
+function utilizadores_bloqueados() {
     $count = 0;
     $query = "SELECT type FROM users WHERE active ='0'";
     $data_source = mysql_query($query);
@@ -84,24 +74,24 @@ function utilizadores_bloqueados(){
     return $count;
 }
 
-function code_nexar($str){
+function code_nexar($str) {
     $valor = chunk_split($str,1,".");
     $array = explode(".", $valor);
 
-        return $array;
+	return $array;
 }
 
-function code_nexar_printer($array){
+function code_nexar_printer($array) {
     for($i=sizeof($array)-2;$i>=0;$i--) {echo "<img src='./media/imagens/nxschars/".strtolower ( $array[$i]).".jpg' style='border:none;height:20px;'>";}
 }
 
-function name_checker($str){
+function name_checker($str) {
     $valor = str_replace("."," ",$str);
 
     return $valor;
 }
 
-function return_username($id){
+function return_username($id) {
     $query = "SELECT username FROM users WHERE id = ".$id." LIMIT 1";
     $source = mysql_query($query);
     $data = mysql_fetch_array($source);
@@ -121,8 +111,7 @@ function user_type($type){
      * Esta funçao destina-se ao retorno de uma String com o nome do tipo de utilizador
      * segundo uma variavel numerica introduzida por argumento
      */
-    switch($type)
-    {
+    switch ($type) {
         case 1:return "Administrador";break;
         case 2:return "Gestor";break;
         case 3:return "Membro da Equipa";break;
@@ -133,11 +122,11 @@ function user_type($type){
     }
 }
 
-function return_editor($usertype,$editordataprint){
+function return_editor($usertype,$editordataprint) {
 	include("./editor/".$usertype.".php");
 }
 
-function send_mail_to($username,$email,$title,$message){
+function send_mail_to($username,$email,$title,$message) {
     // multiple recipients
     $to  = $email . ', '; // note the comma
 
@@ -190,7 +179,7 @@ function send_mail_to($username,$email,$title,$message){
     if (mail($to, $subject, $message, $headers)) {return true;}else{return false;}
 }
 
-function socialNetwork (){
+function socialNetwork () {
     return "<p style=\"text-align:right;border: 1px solid #D0D0D0;padding: 1px 1px 1px 1px;\">Partilha : <script type=\"text/javascript\">
                     var switchTo5x=true;</script><script type=\"text/javascript\" src=\"http://w.sharethis.com/button/buttons.js\"></script>
                     <script type=\"text/javascript\">stLight.options({publisher:'d349ec71-f5f4-4cab-913e-cbf37e86db04'});
@@ -199,7 +188,7 @@ function socialNetwork (){
 ";
 }
 
-function return_smiles($string){
+function return_smiles($string) {
 	$path 	= "./images/smiles/";
 	$before = "<img style=\"height: 18px;\" src=\"";
 	$after 	= "\">";
@@ -243,13 +232,13 @@ function return_smiles($string){
 	return str_replace($texto,$smiles,$string);
 }
 
-function return_error(){
+function return_error() {
     print("<p align='center'><img src='./media/imagens/i_stop.png' class='decorationone'><br>Estás a procura de uma página que não existe!</p>
         <p align='center'>Caso ache que isto seja um erro, contacte: <a href=\"mailto:geral@nexus-pt.eu\">geral@nexus-pt.eu</a></p>");
 }
 /*   -----------------------------------------GAME--------------------------------------    */
 /*   -----------------------------------------------------------------------------------    */
-function return_charname($id){
+function return_charname($id) {
     $query = "SELECT name FROM g_char WHERE id = '".$id."' LIMIT 1";
     $source = mysql_query($query);
     $data = mysql_fetch_array($source);
@@ -257,7 +246,7 @@ function return_charname($id){
     return $data["name"];
 }
 
-function game_type_write($type){
+function game_type_write($type) {
     /*
      * Esta funçao destina-se ao retorno de uma String com o nome do tipo de Nexar
      * segundo uma variavel numerica introduzida por argumento
@@ -278,7 +267,7 @@ function game_type_write($type){
 
 }
 
-function game_combat($jog1,$jog2,$i){
+function game_combat($jog1,$jog2,$i) {
     /* 
      * variavel jog1, é um array que tem todos os dados do jogador#1
      * tendo como subdados #atk #def #vida #velocidade #dif #a-min #a-max 
