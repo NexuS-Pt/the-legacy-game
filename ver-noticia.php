@@ -1,13 +1,12 @@
 <?php
 	//VER NOTICIA
 	
-	$noti_id 		= intval($_GET['noti']);
+	$noti_id = intval($_GET['noti']);
 						
-	$query 			= "SELECT * FROM content WHERE id = '".$noti_id."'";
-	$data_source 		= mysql_query($query);
-        if (mysql_num_rows($data_source) == 1)
-        {
-            $data 			= mysql_fetch_array($data_source);
+	$query = "SELECT * FROM content WHERE id = '".$noti_id."'";
+	$data_source = mysql_query($query);
+        if (mysql_num_rows($data_source) == 1) {
+            $data = mysql_fetch_array($data_source);
 			
 			echo "
 			<div class=\"article\">
@@ -21,10 +20,8 @@
             $config["site_name"] .= " : ".$data['nome'];
 
             // CHAMAR FICHEIRO DE COMENTARIOS
-            include("comments/view.php");
-        }
-        else
-        {
+            include "comments/view.php";
+        } else {
             return_error();
         }
 ?>
